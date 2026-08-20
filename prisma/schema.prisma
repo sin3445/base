@@ -31,14 +31,25 @@ model Cliente {
 }
 
 model Pedido {
-  id                 Int       @id @default(autoincrement())
+  id                 Int         @id @default(autoincrement())
   descripcion        String
-  estado             String    @default("PENDIENTE")
+  estado             String      @default("PENDIENTE")
   total              Float
   clienteId          Int
-  cliente            Cliente   @relation(fields: [clienteId], references: [id])
+  cliente            Cliente     @relation(fields: [clienteId], references: [id])
   usuarioId          Int
-  usuario            Usuario   @relation(fields: [usuarioId], references: [id])
+  usuario            Usuario     @relation(fields: [usuarioId], references: [id])
+  disenos            Diseno3D[]
+  fechaCreacion      DateTime    @default(now())
+  fechaActualizacion DateTime    @updatedAt
+}
+
+model Diseno3D {
+  id                 Int       @id @default(autoincrement())
+  nombre             String
+  configuracionJson  String
+  pedidoId           Int
+  pedido             Pedido    @relation(fields: [pedidoId], references: [id])
   fechaCreacion      DateTime  @default(now())
   fechaActualizacion DateTime  @updatedAt
 }

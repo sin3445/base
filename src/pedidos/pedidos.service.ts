@@ -40,14 +40,14 @@ export class PedidosService {
     const where = usuarioId ? { usuarioId } : {};
     return this.prisma.pedido.findMany({
       where,
-      include: { cliente: true },
+      include: { cliente: true, disenos: true },
     });
   }
 
   findOne(id: number) {
     return this.prisma.pedido.findUnique({
       where: { id },
-      include: { cliente: true },
+      include: { cliente: true, disenos: true },
     });
   }
 

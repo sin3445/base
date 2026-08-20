@@ -1,0 +1,237 @@
+/* ============================================
+   Configurador3D — Estilos del componente
+   ============================================ */
+
+.configurador3d {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* --- Header --- */
+.configurador3d__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.configurador3d__title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.configurador3d__meta {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.configurador3d__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #e8e8f0;
+  color: #4a4a6a;
+}
+
+.configurador3d__badge--primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+}
+
+/* --- Canvas wrapper --- */
+.configurador3d__canvas-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0d0d1a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.configurador3d__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Loader --- */
+.configurador3d__loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: #0d0d1a;
+  z-index: 2;
+}
+
+.configurador3d__loader-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(102, 126, 234, 0.25);
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin3d 0.8s linear infinite;
+}
+
+.configurador3d__loader-text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #a0a0c0;
+  font-weight: 500;
+}
+
+.configurador3d__progress-bar {
+  width: 220px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.configurador3d__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* --- Controls --- */
+.configurador3d__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.configurador3d__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.configurador3d__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a4a6a;
+}
+
+.configurador3d__input {
+  padding: 0.65rem 0.9rem;
+  border: 2px solid #e0e0ed;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  background: #fafaff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.configurador3d__input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.configurador3d__input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- Save button --- */
+.configurador3d__save-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 4px 14px rgba(102, 126, 234, 0.35);
+}
+
+.configurador3d__save-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.45);
+}
+
+.configurador3d__save-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.configurador3d__save-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.configurador3d__save-btn--saving {
+  background: linear-gradient(135deg, #8899dd, #9977bb);
+}
+
+.configurador3d__btn-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin3d 0.6s linear infinite;
+}
+
+/* --- Alerts --- */
+.configurador3d__alert {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  animation: fadeInAlert 0.3s ease;
+}
+
+.configurador3d__alert--success {
+  background: #e6f9ee;
+  color: #1a7a42;
+  border: 1px solid #b2e5c8;
+}
+
+.configurador3d__alert--error {
+  background: #fef0f0;
+  color: #b91c1c;
+  border: 1px solid #f5c6c6;
+}
+
+/* --- Animations --- */
+@keyframes spin3d {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInAlert {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
